@@ -16,3 +16,20 @@ function MainContent() {
 }
 
 export default MainContent;
+
+function MainContent() {
+  return (
+    <main
+      style={{
+        padding: "20px",
+        backgroundColor: "#f4f4f4",
+        textAlign: "center"
+      }}
+    >
+      <h2>Main Content</h2>
+      <p>I love to visit New York, Paris, and Tokyo.</p>
+    </main>
+  );
+}
+
+export default MainContent;
