@@ -26,3 +26,4 @@
     "vite": "^7.2.4"
   }
 }
+"description": "Simple company website built with React",
