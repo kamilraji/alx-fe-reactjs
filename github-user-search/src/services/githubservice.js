@@ -1,17 +1,14 @@
-import axios from 'axios'
+import axios from "axios"
 
-const API_URL = 'https://api.github.com/search/users'
+const api = axios.create({
+  baseURL: import.meta.env.VITE_GITHUB_API_URL,
+})
 
-export const searchUsers = async (query) => {
-  if (!query) return []
-
-  const response = await axios.get(API_URL, {
-    params: { q: query },
-    headers: {
-      Authorization: import.meta.env.VITE_APP_GITHUB_API_KEY
-        ? `token ${import.meta.env.VITE_APP_GITHUB_API_KEY}`
-        : undefined
-    }
+export const searchUsers = async (searchTerm) => {
+  const response = await api.get("", {
+    params: {
+      q: searchTerm,
+    },
   })
 
   return response.data.items
