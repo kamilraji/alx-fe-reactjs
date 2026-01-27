@@ -1,5 +1,3 @@
-const BASE_URL = 'https://api.github.com/search/users';
-
 export async function searchUsers({ username, location, minRepos, page = 1 }) {
   let query = '';
 
@@ -8,7 +6,7 @@ export async function searchUsers({ username, location, minRepos, page = 1 }) {
   if (minRepos) query += `repos:>=${minRepos}`;
 
   const response = await fetch(
-    `${BASE_URL}?q=${encodeURIComponent(query)}&page=${page}&per_page=10`
+    `https://api.github.com/search/users?q=${encodeURIComponent(query)}&page=${page}&per_page=10`
   );
 
   if (!response.ok) {
