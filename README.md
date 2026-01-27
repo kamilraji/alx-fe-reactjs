@@ -1,21 +1,20 @@
-# ALX Frontend ReactJS Projects
+# GitHub User Search Application
 
-This repository contains React projects developed as part of the ALX Frontend curriculum.
+This is a React application built with Vite that allows users to search for GitHub profiles using the GitHub API.
 
-## Project: GitHub User Search
+## Project Setup
 
-The `github-user-search` project is a React application built with Vite that allows users to search for GitHub profiles using the GitHub API.
+- Built with React and Vite
+- Uses Axios for API requests
+- Prepared for GitHub API integration using environment variables
 
-### Features
-- React + Vite setup
-- Axios for HTTP requests
-- Environment variable configuration
-- Clean project structure ready for extension
+## How to Run the Project
 
-### Run the Project
+1. Install dependencies:
+   npm install
 
-```bash
-cd github-user-search
-npm install
-npm run dev
+2. Start the development server:
+   npm run dev
+
+The application will run locally and is ready for further development.
 
