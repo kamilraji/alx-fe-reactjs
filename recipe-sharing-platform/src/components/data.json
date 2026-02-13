@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Bolognese",
+    "image": "/images/spaghetti.jpg",
+    "ingredients": [
+      "Spaghetti",
+      "Ground beef",
+      "Tomato sauce"
+    ],
+    "instructions": [
+      "Boil water and cook spaghetti.",
+      "Cook beef in a pan.",
+      "Mix with sauce and combine."
+    ]
+  }
+]
+

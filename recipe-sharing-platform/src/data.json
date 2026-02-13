@@ -3,19 +3,56 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/300"
+    "image": "https://via.placeholder.com/300",
+    "ingredients": [
+      "Spaghetti",
+      "Eggs",
+      "Parmesan cheese",
+      "Bacon",
+      "Black pepper"
+    ],
+    "instructions": [
+      "Boil the spaghetti.",
+      "Cook the bacon.",
+      "Mix eggs and cheese.",
+      "Combine everything together."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
-    "summary": "Chunks of grilled chicken cooked in a smooth buttery and creamy tomato-based gravy.",
-    "image": "https://via.placeholder.com/300"
+    "summary": "Chunks of grilled chicken cooked in a smooth buttery and creamy sauce.",
+    "image": "https://via.placeholder.com/300",
+    "ingredients": [
+      "Chicken",
+      "Tomato sauce",
+      "Cream",
+      "Spices"
+    ],
+    "instructions": [
+      "Grill the chicken.",
+      "Prepare the sauce.",
+      "Mix and simmer."
+    ]
   },
   {
     "id": 3,
     "title": "Vegetable Stir Fry",
-    "summary": "Fresh vegetables stir-fried with soy sauce and garlic for a quick healthy meal.",
-    "image": "https://via.placeholder.com/300"
+    "summary": "Fresh vegetables stir-fried with soy sauce and garlic.",
+    "image": "https://via.placeholder.com/300",
+    "ingredients": [
+      "Broccoli",
+      "Carrots",
+      "Bell peppers",
+      "Soy sauce",
+      "Garlic"
+    ],
+    "instructions": [
+      "Chop vegetables.",
+      "Heat oil in pan.",
+      "Stir fry vegetables.",
+      "Add soy sauce and serve."
+    ]
   }
 ]
 
