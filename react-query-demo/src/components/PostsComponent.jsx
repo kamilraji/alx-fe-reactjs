@@ -6,7 +6,7 @@ const fetchPosts = async () => {
   );
 
   if (!response.ok) {
-    throw new Error("Network response was not ok");
+    throw new Error("Failed to fetch posts");
   }
 
   return response.json();
@@ -22,7 +22,10 @@ function PostsComponent() {
   } = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
-    staleTime: 1000 * 60 * 2, // 2 minutes cache
+    staleTime: 1000 * 60 * 2,      // 2 minutes
+    cacheTime: 1000 * 60 * 5,     // 5 minutes
+    refetchOnWindowFocus: false,
+    keepPreviousData: true,
   });
 
   if (isLoading) return <p>Loading posts...</p>;
