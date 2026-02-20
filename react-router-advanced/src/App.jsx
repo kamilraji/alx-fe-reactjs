@@ -1,3 +1,4 @@
+import ProtectedRoute from "./components/ProtectedRoute";
 import {
   BrowserRouter,
   Routes,
@@ -22,12 +23,7 @@ function BlogPost() {
   return <h2>Blog Post ID: {id}</h2>;
 }
 
-function ProtectedRoute({ isAuthenticated, children }) {
-  if (!isAuthenticated) {
-    return <Navigate to="/" replace />;
-  }
-  return children;
-}
+
 
 function App() {
   const isAuthenticated = true;
