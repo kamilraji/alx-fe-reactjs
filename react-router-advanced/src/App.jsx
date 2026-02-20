@@ -1,45 +1,26 @@
-import { Routes, Route, Link, Outlet, useParams, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Outlet,
+  useParams,
+  Navigate,
+} from "react-router-dom";
 
+import Profile from "./components/Profile";
 
-/* -------- Basic Pages -------- */
 function Home() {
   return <h2>Home Page</h2>;
 }
-
-function Post() {
-  const { id } = useParams();
-
-  return <h2>Post ID: {id}</h2>;
-}
-
-
 
 function About() {
   return <h2>About Page</h2>;
 }
 
-/* -------- Nested Profile Pages -------- */
-function Profile() {
-  return (
-    <>
-      <h2>Profile Page</h2>
-
-      <nav style={{ display: "flex", gap: "20px" }}>
-        <Link to="details">Details</Link>
-        <Link to="settings">Settings</Link>
-      </nav>
-
-      <Outlet />
-    </>
-  );
-}
-
-function ProfileDetails() {
-  return <h3>Profile Details</h3>;
-}
-
-function ProfileSettings() {
-  return <h3>Profile Settings</h3>;
+function Post() {
+  const { id } = useParams();
+  return <h2>Post ID: {id}</h2>;
 }
 
 function ProtectedRoute({ isAuthenticated, children }) {
@@ -49,14 +30,11 @@ function ProtectedRoute({ isAuthenticated, children }) {
   return children;
 }
 
-
-/* -------- App -------- */
 function App() {
-
-const isAuthenticated = true; // change to true to simulate login
+  const isAuthenticated = true;
 
   return (
-    <>
+    <BrowserRouter>
       <nav style={{ display: "flex", gap: "20px" }}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
@@ -71,10 +49,10 @@ const isAuthenticated = true; // change to true to simulate login
     </ProtectedRoute>
   }
 >
-  <Route path="details" element={<ProfileDetails />} />
-  <Route path="settings" element={<ProfileSettings />} />
+  <Route path="details" element={<h3>Profile Details</h3>} />
+  <Route path="settings" element={<h3>Profile Settings</h3>} />
 </Route>
-    </>
+    </BrowserRouter>
   );
 }
 
