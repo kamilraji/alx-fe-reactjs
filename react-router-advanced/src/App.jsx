@@ -42,12 +42,14 @@ function App() {
       </nav>
 
       <Route
-  path="/profile"
+  path="/profile/*"
   element={
     <ProtectedRoute isAuthenticated={isAuthenticated}>
       <Profile />
     </ProtectedRoute>
   }
+/>
+
 >
   <Route path="details" element={<h3>Profile Details</h3>} />
   <Route path="settings" element={<h3>Profile Settings</h3>} />
