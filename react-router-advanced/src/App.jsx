@@ -3,7 +3,6 @@ import {
   Routes,
   Route,
   Link,
-  Outlet,
   useParams,
   Navigate,
 } from "react-router-dom";
@@ -18,9 +17,9 @@ function About() {
   return <h2>About Page</h2>;
 }
 
-function Post() {
+function BlogPost() {
   const { id } = useParams();
-  return <h2>Post ID: {id}</h2>;
+  return <h2>Blog Post ID: {id}</h2>;
 }
 
 function ProtectedRoute({ isAuthenticated, children }) {
@@ -41,19 +40,20 @@ function App() {
         <Link to="/profile">Profile</Link>
       </nav>
 
-      <Route
-  path="/profile/*"
-  element={
-    <ProtectedRoute isAuthenticated={isAuthenticated}>
-      <Profile />
-    </ProtectedRoute>
-  }
-/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
 
->
-  <Route path="details" element={<h3>Profile Details</h3>} />
-  <Route path="settings" element={<h3>Profile Settings</h3>} />
-</Route>
+        <Route
+          path="/profile/*"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 }
