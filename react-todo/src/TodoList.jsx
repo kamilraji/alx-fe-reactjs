@@ -1,23 +1,24 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function TodoList() {
   const [todos, setTodos] = useState([
     { id: 1, text: "Learn React", completed: false },
     { id: 2, text: "Write Tests", completed: false },
   ]);
+
   const [newTodo, setNewTodo] = useState("");
 
   const addTodo = (e) => {
     e.preventDefault();
     if (!newTodo.trim()) return;
 
-    const todo = {
+    const newItem = {
       id: Date.now(),
       text: newTodo,
       completed: false,
     };
 
-    setTodos([...todos, todo]);
+    setTodos([...todos, newItem]);
     setNewTodo("");
   };
 
@@ -56,7 +57,6 @@ function TodoList() {
               onClick={() => toggleTodo(todo.id)}
               style={{
                 textDecoration: todo.completed ? "line-through" : "none",
-                cursor: "pointer",
               }}
             >
               {todo.text}

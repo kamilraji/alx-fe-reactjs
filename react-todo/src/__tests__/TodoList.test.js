@@ -1,10 +1,8 @@
-import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import TodoList from "../TodoList";
 
 describe("TodoList", () => {
-
   test("renders initial todos", () => {
     render(<TodoList />);
     expect(screen.getByText("Learn React")).toBeInTheDocument();
@@ -39,5 +37,4 @@ describe("TodoList", () => {
 
     expect(screen.queryByText("Learn React")).not.toBeInTheDocument();
   });
-
 });
