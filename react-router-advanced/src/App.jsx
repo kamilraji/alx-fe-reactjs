@@ -26,7 +26,7 @@ function BlogPost() {
 
 
 function App() {
-  const isAuthenticated = true;
+  const  = true;
 
   return (
     <BrowserRouter>
@@ -44,7 +44,7 @@ function App() {
         <Route
           path="/profile/*"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
+            <ProtectedRoute>
               <Profile />
             </ProtectedRoute>
           }
