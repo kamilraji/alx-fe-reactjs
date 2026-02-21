@@ -6,20 +6,20 @@ function TodoList() {
     { id: 2, text: "Write Tests", completed: false },
   ]);
 
-  const [input, setInput] = useState("");
+  const [newTodo, setNewTodo] = useState("");
 
   const addTodo = (e) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!newTodo.trim()) return;
 
-    const newTodo = {
+    const newItem = {
       id: Date.now(),
-      text: input,
+      text: newTodo,
       completed: false,
     };
 
-    setTodos([...todos, newTodo]);
-    setInput("");
+    setTodos([...todos, newItem]);
+    setNewTodo("");
   };
 
   const toggleTodo = (id) => {
@@ -44,8 +44,8 @@ function TodoList() {
         <input
           type="text"
           placeholder="Add new todo"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
         />
         <button type="submit">Add</button>
       </form>
@@ -56,7 +56,9 @@ function TodoList() {
             <span
               onClick={() => toggleTodo(todo.id)}
               style={{
-                textDecoration: todo.completed ? "line-through" : "none",
+                textDecoration: todo.completed
+                  ? "line-through"
+                  : "none",
               }}
             >
               {todo.text}
@@ -71,5 +73,4 @@ function TodoList() {
   );
 }
 
-export default TodoList;o
-
+export default TodoList;
