@@ -8,7 +8,7 @@ function TodoList() {
 
   const [newTodo, setNewTodo] = useState("");
 
-  const addTodo = (e) => {
+  function addTodo(e) {
     e.preventDefault();
     if (!newTodo.trim()) return;
 
@@ -20,9 +20,9 @@ function TodoList() {
 
     setTodos([...todos, newItem]);
     setNewTodo("");
-  };
+  }
 
-  const toggleTodo = (id) => {
+  function toggleTodo(id) {
     setTodos(
       todos.map((todo) =>
         todo.id === id
@@ -30,11 +30,11 @@ function TodoList() {
           : todo
       )
     );
-  };
+  }
 
-  const deleteTodo = (id) => {
+  function deleteTodo(id) {
     setTodos(todos.filter((todo) => todo.id !== id));
-  };
+  }
 
   return (
     <div>
